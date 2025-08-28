@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: webpage
-        image: iadocicco/pagina-exemplo:green
+        image: iadocicco/pagina-exemplo:blue
         ports:
         - containerPort: 80
 ---
@@ -29,6 +29,7 @@ spec:
   - port: 80
     targetPort: 80
   type: NodePort
+
 
 
 
