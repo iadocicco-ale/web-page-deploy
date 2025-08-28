@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: conversao
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: conversao
@@ -30,4 +30,5 @@ spec:
     targetPort: 8080
 
   type: NodePort
+
 
