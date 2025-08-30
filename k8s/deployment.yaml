@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: webpage
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: webpage
@@ -29,6 +29,7 @@ spec:
   - port: 80
     targetPort: 80
   type: NodePort
+
 
 
 
