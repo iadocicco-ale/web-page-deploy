@@ -30,6 +30,11 @@ spec:
   selector:
     app: conversao
   ports:
+  - name: http         # <<< adicionar este nome
+    port: 80
+    targetPort: 8080
+  type: NodePort
+  ports:
   - port: 80
     targetPort: 8080
 
