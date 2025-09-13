@@ -19,6 +19,7 @@ spec:
       containers:
       - name: conversao
         image: iadocicco/conversao-temperatura:v1
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
 ---
@@ -36,4 +37,5 @@ spec:
       port: 80
       targetPort: 8080
   type: NodePort
+
 
