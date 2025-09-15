@@ -39,14 +39,12 @@ spec:
   type: NodePort
 ---
 ### Necessario ter objeto Service Monitor para poder monitorar via Prometheus ###
-apiVersion: v1
-items:
-- apiVersion: monitoring.coreos.com/v1
-  kind: ServiceMonitor
-  metadata:
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+    name: conversao
     labels:
       release: prometheus-grafana
-    name: conversao
   spec:
     endpoints:
     - interval: 15s
@@ -55,3 +53,4 @@ items:
     selector:
       matchLabels:
         app: conversao
+        
