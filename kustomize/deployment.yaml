@@ -38,19 +38,18 @@ spec:
       targetPort: 8080
   type: NodePort
 ---
-### Necessario ter objeto Service Monitor para poder monitorar via Prometheus ###
+# Necessário ter objeto ServiceMonitor para poder monitorar via Prometheus
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-    name: conversao
-    labels:
-      release: prometheus-grafana
-  spec:
-    endpoints:
-    - interval: 15s
-      path: /metrics
-      port: http
-    selector:
-      matchLabels:
-        app: conversao
-        
+  name: conversao
+  labels:
+    release: prometheus-grafana
+spec:
+  selector:
+    matchLabels:
+      app: conversao
+  endpoints:
+  - interval: 15s
+    path: /metrics
+    port: http
