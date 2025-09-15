@@ -11,10 +11,10 @@ spec:
     metadata:
       labels:
         app: conversao
-      annotations:
-        prometheus.io/scrape: 'true'
-        prometheus.io/port: '8080'
-        prometheus.io/path: '/metrics'
+#      annotations: -- Nao precisa de annotations pq o Prometheus foi instalado via Operator, sendo necessario criar um Service Monitor.
+#        prometheus.io/scrape: 'true'
+#        prometheus.io/port: '8080'
+#        prometheus.io/path: '/metrics'
     spec:
       containers:
       - name: conversao
@@ -53,3 +53,4 @@ spec:
   - interval: 15s
     path: /metrics
     port: http
+
